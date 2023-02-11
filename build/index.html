@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>All questions</title>
+        <!-- Prefetches -->
+        <section>
+            <link rel="prefetch" href="/src/assets/" />
+        </section>
+        <!-- Latest compiled and minified CSS  -->
+        <link href="assets/ext/bootstrap.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+
+        <!-- Latest compiled JavaScript -->
+        <script src="assets/ext/bootstrap.js"></script>
+        <script src="assets/ext/marked.js"></script>
+
+        <script src="assets/js/MD.js" defer></script>
+        <script src="assets/js/overlay.js" defer></script>
+    </head>
+    <body class="bg-light my-5 container">
+        <md src="assets/MD/Header.md" class="text-break"></md>
+        <main class="row">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link active"
+                        id="pills-home-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#Pane1"
+                        type="button"
+                        role="tab"
+                        aria-controls="Pane1"
+                        aria-selected="true"
+                    >
+                        Home
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link"
+                        id="pills-profile-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#Pane2"
+                        type="button"
+                        role="tab"
+                        aria-controls="Pane2"
+                        aria-selected="false"
+                    >
+                        Pane2
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link"
+                        id="pills-contact-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#Pane3"
+                        type="button"
+                        role="tab"
+                        aria-controls="Pane3"
+                        aria-selected="false"
+                    >
+                        Pane3
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <md
+                    id="Pane1"
+                    class="align-content-lg-around p-4 mb-4 tab-pane fade show active"
+                    src="assets/MD/1.md"
+                ></md>
+                <md
+                    id="Pane2"
+                    class="p-4 mb-4 tab-pane fade"
+                    src="assets/MD/2.md"
+                ></md>
+                <md
+                    id="Pane3"
+                    class="p-4 mb-4 tab-pane fade"
+                    src="assets/MD/3.md"
+                ></md>
+            </div>
+        </main>
+
+        <footer
+            class="fixed-bottom shadow bg-light bg-opacity-75 text-black w-100"
+        >
+            <section class="text-center">
+                <md src="assets/MD/Footer.md"></md>
+            </section>
+        </footer>
+        <script>
+            window.onload = async () => {
+                await loadMarkdown().then(function () {
+                    startOverlayListner();
+                });
+            };
+        </script>
+    </body>
+</html>

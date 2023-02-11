@@ -1,0 +1,6 @@
+**/.DS_Store
+src/**
+build.sh
+buildver.py
+tsconfig.json
+.vscode/**
