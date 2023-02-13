@@ -17,13 +17,13 @@ footer {
 .card img {
     width: 200px;
     transition: 1s;
+    transition-delay: 2s;
     z-index: inherit;
 }
 
 .card img:hover {
     height: auto;
     width: 100%;
-    max-width: 100vh;
     display: block;
     z-index: 11;
 }
@@ -31,4 +31,18 @@ footer {
 body,
 html {
     scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 992px) {
+    .card img {
+        height: auto;
+        width: 100%;
+        max-width: 100vh;
+        display: block;
+        z-index: 11;
+    }
+    .card {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
